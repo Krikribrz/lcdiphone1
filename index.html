@@ -2084,14 +2084,7 @@ function mostrarLista(fromPop) {
     if (lista && pag) { lista.style.display = 'block'; pag.style.display = 'none'; }
     // Rolar para o topo
     try { window.scrollTo({top: 0, left: 0, behavior: 'instant'}); } catch(e) { window.scrollTo(0,0); }
-    // Focar no campo de busca (com pequeno delay para browsers móveis)
-    setTimeout(function(){
-      try { 
-        var campo = document.getElementById('campoBusca');
-        if (campo) { campo.focus(); campo.select && campo.select(); }
       } catch(e) {}
-    }, 0);
-  } catch(e) {}
 
   try{ if(!fromPop){ history.pushState({view:'list'}, '', '#list'); } }catch(e){}
   document.getElementById('paginaMusica').style.display = 'none';
